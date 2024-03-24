@@ -217,6 +217,7 @@ a.navegation-link{
 .item {
 	border-radius: 15px;
 	border: 1px solid #E1E1E1;
+	z-index: 0;
 }
 
 .item:hover {
@@ -229,7 +230,7 @@ a.navegation-link{
 	object-fit: cover;
 	border-radius: 10px 10px 0 0;
 	transition: all 0.5s;
-	z-index: 1;
+	z-index: 0;
 }
 
 .item figure {
