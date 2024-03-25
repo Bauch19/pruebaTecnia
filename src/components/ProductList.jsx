@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { data } from '../data';
 import { Calificacion } from './Calificacion';
-import { FaFacebook, FaTwitter, FaInstagram, FaRegHeart } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaRegHeart, FaHeart } from 'react-icons/fa';
 
 export const ProductList = ({
 	allProducts,
@@ -38,13 +38,13 @@ export const ProductList = ({
 		});
 	};
 
-	const [likes, setLikes] = useState(data.map((product) => product.likes));
+	const [liked, setLiked] = useState(data.map(() => false));
 
-	const increaseLikes = (index) => {
-		setLikes(prevLikes => {
-			const newLikes = [...prevLikes];
-			newLikes[index] += 1;
-			return newLikes;
+	const handleLikeClick = (index) => {
+		setLiked(prevLiked => {
+			const newLiked = [...prevLiked];
+			newLiked[index] = !newLiked[index]; 
+			return newLiked;
 		});
 	};
 
@@ -54,7 +54,12 @@ export const ProductList = ({
 				<div className='item' key={product.id}>
 					<figure>
 						<div className='like-contador'>
-							<FaRegHeart color='#FF8E8E' onClick={() => increaseLikes(index)} /> {likes[index]}
+							{liked[index] ? (
+								<FaHeart color='#FF8E8E' onClick={() => handleLikeClick(index)} />
+							) : (
+								<FaRegHeart color='#FF8E8E' onClick={() => handleLikeClick(index)} />
+							)}
+							{liked[index] ? product.likes + 1 : product.likes}
 						</div>
 						<div className='descuento'>-{product.descuento}%</div>
 						<img src={product.img} alt={product.nameProduct} />
