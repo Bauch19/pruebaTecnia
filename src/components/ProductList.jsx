@@ -1,9 +1,7 @@
+import { useState } from 'react';
 import { data } from '../data';
 import { Calificacion } from './Calificacion';
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaRegHeart } from 'react-icons/fa';
 
 export const ProductList = ({
 	allProducts,
@@ -30,14 +28,47 @@ export const ProductList = ({
 		setAllProducts([...allProducts, product]);
 	};
 
+	const [activePoints, setActivePoints] = useState(Array(5).fill(0));
+
+	const handlePointClick = (itemIndex, pointIndex) => {
+		setActivePoints(prevActivePoints => {
+			const newActivePoints = [...prevActivePoints];
+			newActivePoints[itemIndex] = pointIndex;
+			return newActivePoints;
+		});
+	};
+
+	const [likes, setLikes] = useState(data.map((product) => product.likes));
+
+	const increaseLikes = (index) => {
+		setLikes(prevLikes => {
+			const newLikes = [...prevLikes];
+			newLikes[index] += 1;
+			return newLikes;
+		});
+	};
+
 	return (
 		<div className='container-items'>
-			{data.map(product => (
+			{data.map((product, index) => (
 				<div className='item' key={product.id}>
 					<figure>
-						<div className='like-contador'><FaRegHeart color='#FF8E8E' /> {product.likes}</div>
+						<div className='like-contador'>
+							<FaRegHeart color='#FF8E8E' onClick={() => increaseLikes(index)} /> {likes[index]}
+						</div>
 						<div className='descuento'>-{product.descuento}%</div>
 						<img src={product.img} alt={product.nameProduct} />
+						<div className='slider-img'>
+							<ul>
+							{[0, 1, 2].map((pointIndex) => ( // Cambia el número de puntos de navegación según sea necesario
+								<li 
+									key={pointIndex} 
+									className={activePoints[index] === pointIndex ? 'active-point' : ''} 
+									onClick={() => handlePointClick(itemIndex, pointIndex)}
+								></li>
+							))}
+							</ul>
+						</div>
 						<div className='contenedor-doble'>
 							<h2 className='product-name-list'><strong>{product.nameProduct}</strong></h2>
 							<h2 className='product-name-list'>${product.price}</h2>

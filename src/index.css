@@ -368,6 +368,7 @@ a.navegation-link{
 .like-contador svg{
 	margin-right: 5px;
 	font-weight: 900;
+	cursor: pointer;
 }
 
 .descuento{
@@ -381,4 +382,41 @@ a.navegation-link{
 	position: absolute;
 	margin-top: 30px;
 	margin-left: 15.5%;
+}
+
+.slider-img{
+	background-color: #fff;
+	border: 1px solid #E1E1E1;
+	border-radius: 50px;
+	width: 84px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	align-items: center;
+	position: absolute;
+	margin-top: -50px;
+	margin-left: 65px;
+}
+
+.slider-img {
+	ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	  display: flex; /* Hace que los elementos de la lista se muestren en línea */
+	}
+  
+	li {
+	  margin: 0 5px;
+	  width: 8px; 
+	  height: 8px;
+	  background-color: #dbdbdb; 
+	  border-radius: 50%; 
+	  cursor: pointer; 
+	}
+  
+	.active-point {
+	  background-color: #22212C; /* Cambia el color del punto activo */
+	}
 }
