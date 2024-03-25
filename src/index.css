@@ -180,10 +180,10 @@ a.navegation-link{
 
 /* Main */
 .container-items {
-	padding: 60px 20px 60px 20px;
+	padding: 80px 40px 80px 40px;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 20px;
+	grid-template-columns: repeat(4, 2fr);
+	gap: 50px;
 }
 
 .bannerFull{
@@ -215,7 +215,7 @@ a.navegation-link{
 }
 
 .item {
-	border-radius: 15px;
+	border-radius: 25px;
 	border: 1px solid #E1E1E1;
 	z-index: 0;
 }
@@ -236,7 +236,7 @@ a.navegation-link{
 .item figure {
 	overflow: hidden;
 	border: 1px solid #E1E1E1;
-	border-radius: 15px;
+	border-radius: 25px;
 	padding: 30px;
 }
 
@@ -351,4 +351,34 @@ a.navegation-link{
 .iconos-redes{
 	display: flex;
 	justify-content: space-between;
+}
+
+.like-contador{
+	background-color: #fff;
+	border: 1px solid #E1E1E1;
+	padding: 8px 12px 8px 12px;
+	border-radius: 50px;
+	font-weight: 700;
+	font-size: 12px;
+	position: absolute;
+	margin-top: -10px;
+	margin-left: 15.2%;
+}
+
+.like-contador svg{
+	margin-right: 5px;
+	font-weight: 900;
+}
+
+.descuento{
+	background-color: #FF8E8E;
+	border: 1px solid #FF8E8E;
+	padding: 8px 12px 8px 12px;
+	color: #fff;
+	border-radius: 50px;
+	font-weight: 700;
+	font-size: 12px;
+	position: absolute;
+	margin-top: 30px;
+	margin-left: 15.5%;
 }

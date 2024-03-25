@@ -10,6 +10,8 @@ export const data = [
 		miligramos: 80,
 		stars: 4,
 		reviews: 20,
+		likes: 22,
+		descuento: 30,
 	},
 	{
 		id: 2,
@@ -22,6 +24,8 @@ export const data = [
 		miligramos: 80,
 		stars: 5,
 		reviews: 20,
+		likes: 22,
+		descuento: 30,
 	},
 	{
 		id: 3,
@@ -34,6 +38,8 @@ export const data = [
 		miligramos: 80,
 		stars: 3,
 		reviews: 20,
+		likes: 22,
+		descuento: 30,
 	},
 	{
 		id: 4,
@@ -46,6 +52,8 @@ export const data = [
 		miligramos: 80,
 		stars: 4,
 		reviews: 20,
+		likes: 22,
+		descuento: 30,
 	},
 	// Aquí pueden agregar más o modificar los productos existentes
 ];

@@ -3,6 +3,7 @@ import { Calificacion } from './Calificacion';
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 export const ProductList = ({
 	allProducts,
@@ -34,6 +35,8 @@ export const ProductList = ({
 			{data.map(product => (
 				<div className='item' key={product.id}>
 					<figure>
+						<div className='like-contador'><FaRegHeart color='#FF8E8E' /> {product.likes}</div>
+						<div className='descuento'>-{product.descuento}%</div>
 						<img src={product.img} alt={product.nameProduct} />
 						<div className='contenedor-doble'>
 							<h2 className='product-name-list'><strong>{product.nameProduct}</strong></h2>
