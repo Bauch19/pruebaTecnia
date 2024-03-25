@@ -69,7 +69,7 @@ export const ProductList = ({
 								<li 
 									key={pointIndex} 
 									className={activePoints[index] === pointIndex ? 'active-point' : ''} 
-									onClick={() => handlePointClick(itemIndex, pointIndex)}
+									onClick={() => handlePointClick(index, pointIndex)}
 								></li>
 							))}
 							</ul>
